@@ -3,4 +3,11 @@ of the angle measurement.
 Permission is given to those who wish to use this program for personal use or for educational purposes ONLY (citation is not needed).
 Please DO NOT use this program as a means of making money.
 
-NOTE: This program is currently in development. This file will be updated when the program is finished.
+How to use the radian part of this program: please use 3.14 in place of π, 0.866 for the square root of 3 divided by 2, and
+0.707 for the square root of 2 divided by 2.
+
+If you want to find the coordinates for 5π/6, for example, or any multiple of the square root of 2 divided by 2
+or the square root of 3 divided by 2, simply multiply the approximate value that is listed above by the number you want to multiply it by.
+For example, if you want to find the x and y coordinates of 5π/6, for example, simply multiply 0.866 by 5, which is 4.33.
+
+NOTE: This program is currently in development. This file will be updated periodically when a new update has occurred.
