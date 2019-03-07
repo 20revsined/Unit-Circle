@@ -10,6 +10,7 @@ Fixes in the March 2019 update:
 Bugs that must be addressed:
 1. Some values do not work when the user is prompted to enter x and y coordinates for a coordinate on the unit circle.
 2. Users cannot enter radian values (when trying to find a coordinate on the unit circle) that are greater than 2π.
+3. If the coordinate the user entered is not located in the unit circle, a message must be displayed telling the user this.
 
 ***THESE BUGS WILL BE FIXED ASAP!***
 
