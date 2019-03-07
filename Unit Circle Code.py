@@ -5,8 +5,11 @@ Input = str(input("Welcome to the Unit Circle calculator! Please state whether y
 if Input == "degrees":
 	degrees = float(input("Please enter your degree measurement."))
 
-	while degrees < 0:
+	while degrees < 0 and degrees <= 360:
 		degrees += 360
+
+	while degrees > 360 and degrees >= 0:
+		degrees -= 360
 
 	if(degrees % 30 == 0) and (degrees % 60 != 0) and (degrees > 0 and degrees < 90):
 		print("The coordinates of this measurementment are (" + str(math.sqrt(3) / 2) + "," + str(0.5) + ")")
@@ -43,53 +46,76 @@ if Input == "degrees":
 		print("The coordinates of this measurement are (-1, 0)")
 	elif degrees == 270:
 		print("The coordinates of this measurement are (0, -1)")
-	else:
-		print("You have entered an invalid degree value. Please try again.")
 
 elif Input == "radians":
-	radians = float(input("Please enter your radian measurement."))
+	radians = str(input("Please enter your radian measurement."))
 
-	while radians < 0:
-		radians += 6.28
+	if(radians == "pi"):
+		radians = math.pi
+		ModifyRadian = float(input("Please enter a value that will modify your input."))
+		ModifyRadian *= math.pi
 
-	if(radians % 0.523 == 0) and (radians % 1.046 != 0) and (radians > 0 and radians < (math.pi / 2)):
+	while ModifyRadian < 0 and ModifyRadian <= 2 * math.pi:
+		ModifyRadian += (2 * math.pi)
+
+	while ModifyRadian > 2 * math.pi and ModifyRadian <= 0:
+		ModifyRadian -= (2 * math.pi)
+
+	if(ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
 		print("The coordinates of this measurementment are (" + str(math.sqrt(3) / 2) + "," + str(0.5) + ")")
-	elif (radians % 0.523 == 0) and (radians % 1.046 != 0) and (radians > (math.pi / 2) and radians < (math.pi)):
+	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > (math.pi / 2) and ModifyRadian < (math.pi)):
 		print("The coordinates of this measurement are (" + str(-math.sqrt(3) / 2) + "," + str(0.5) + ")")
-	elif (radians % 0.523 == 0) and (radians % 1.046 != 0) and (radians > (math.pi) and radians < (math.pi * 1.5)):
+	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > (math.pi) and ModifyRadian < (math.pi * 1.5)):
 		print("The coordinates of this measurement are (" + str(-math.sqrt(3) / 2) + "," + str(-0.5) + ")")
-	elif (radians % 0.523 == 0) and (radians % 1.046 != 0) and (radians > (math.pi * 1.5) and radians < (math.pi * 2)):
+	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > (math.pi * 1.5) and ModifyRadian < (math.pi * 2)):
 		print("The coordinates of this measurement are (" + str(math.sqrt(3) / 2) + "," + str(-0.5) + ")")
 
-	if (radians % 1.046 == 0) and (radians % 2 == 0) and (radians > 0 and radians < (math.pi / 2)):
+	if (ModifyRadian % (math.pi / 3) == 0) and (ModifyRadian % 2 == 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
 		print("The coordinates of this measurementment are (" + str(0.5) + "," + str(math.sqrt(3) / 2) + ")")
-	elif (radians % 1.046 == 0) and (radians % 2 == 0) and (radians > (math.pi / 2) and radians < (math.pi)):
+	elif (ModifyRadian % (math.pi / 3) == 0) and (ModifyRadian % 2 == 0) and (ModifyRadian > (math.pi / 2) and ModifyRadian < (math.pi)):
 		print("The coordinates of this measurement are (" + str(-0.5) + "," + str(math.sqrt(3) / 2) + ")")
-	elif (radians % 1.046 == 0) and (radians % 2 == 0) and (radians > (math.pi) and radians < (math.pi * 1.5)):
+	elif (ModifyRadian % (math.pi / 3) == 0) and (ModifyRadian % 2 == 0) and (ModifyRadian > (math.pi) and ModifyRadian < (math.pi * 1.5)):
 		print("The coordinates of this measurement are (" + str(-0.5) + "," + str(-math.sqrt(3) / 2) + ")")
-	elif (radians % 1.046 == 0) and (radians % 2 == 0) and (radians > (math.pi * 1.5) and radians < (math.pi * 2)):
+	elif (ModifyRadian % (math.pi / 3) == 0) and (ModifyRadian % 2 == 0) and (ModifyRadian > (math.pi * 1.5) and ModifyRadian < (math.pi * 2)):
 		print("The coordinates of this measurement are (" + str(0.5) + "," + str(-math.sqrt(3) / 2) + ")")
 
-	if (radians % 0.785 == 0) and (radians > 0 and radians < (math.pi / 2)):
+	if (ModifyRadian % (math.pi / 4) == 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
 		print("The coordinates of this measurementment are (" + str(math.sqrt(2) / 2) + "," + str(math.sqrt(2) / 2) + ")")
-	elif (radians % 0.785 == 0) and (radians > (math.pi / 2) and radians < (math.pi)):
+	elif (ModifyRadian % (math.pi / 4) == 0) and (ModifyRadian > (math.pi / 2) and ModifyRadian < (math.pi)):
 		print("The coordinates of this measurement are (" + str(-math.sqrt(2) / 2) + "," + str(math.sqrt(2) / 2) + ")")
-	elif (radians % 0.785 == 0) and (radians > (math.pi) and radians < (math.pi * 1.5)):
+	elif (ModifyRadian % (math.pi / 4) == 0) and (ModifyRadian > (math.pi) and ModifyRadian < (math.pi * 1.5)):
 		print("The coordinates of this measurement are (" + str(-math.sqrt(2) / 2) + "," + str(-math.sqrt(2) / 2) + ")")
-	elif (radians % 0.785 == 0) and (radians > (math.pi * 1.5) and radians < (math.pi * 2)):
+	elif (ModifyRadian % (math.pi / 4) == 0) and (ModifyRadian > (math.pi * 1.5) and ModifyRadian < (math.pi * 2)):
 		print("The coordinates of this measurement are (" + str(math.sqrt(2) / 2) + "," + str(-math.sqrt(2) / 2) + ")")
 
-	if(radians == 0 or radians == 6.28):
+	if(ModifyRadian == 0 or ModifyRadian == math.pi * 2):
 		print("The coordinates of this measurement are (1, 0)")
-	elif radians == 1.57:
+	elif ModifyRadian == math.pi / 2:
 		print("The coordinates of this measurement are (0, 1)")
-	elif radians == 3.14:
+	elif ModifyRadian == math.pi:
 		print("The coordinates of this measurement are (-1, 0)")
-	elif radians == 4.71:
+	elif ModifyRadian == math.pi * 1.5:
 		print("The coordinates of this measurement are (0, -1)")
 
-XCoordinate = float(input("Please enter the x coordinate to determine what angle measure the x and y coordinates are located."))
-YCoordinate = float(input("Please enter the y coordinate to determine what angle measure the x and y coordinates are located."))
+XCoordinate = str(input("Please enter the x coordinate to determine what angle measure the x and y coordinates are located."))
+YCoordinate = str(input("Please enter the y coordinate to determine what angle measure the x and y coordinates are located."))
+
+if XCoordinate == "sqrt3":
+	XCoordinate = math.sqrt(3)
+	ModifyX = float(input("Please enter a value in which sqrt3 will be multiplied."))
+	XCoordinate *= ModifyX
+if XCoordinate == "sqrt2":
+	XCoordinate = math.sqrt(2)
+	ModifyX = float(input("Please enter a value in which sqrt2 will be multiplied."))
+	XCoordinate *= ModifyX
+if YCoordinate == "sqrt3":
+	YCoordinate = math.sqrt(3)
+	ModifyY = float(input("Please enter a value in which sqrt3 will be multiplied."))
+	YCoordinate *= ModifyY
+if YCoordinate == "sqrt2":
+	YCoordinate = math.sqrt(2)
+	ModifyY = float(input("Please enter a value in which sqrt2 will be multiplied."))
+	YCoordinate *= ModifyY
 
 if XCoordinate == 1 and YCoordinate == 0:
 	print("The angle measures are 0 or 360 degrees and 0 or 2π radians")
@@ -100,29 +126,29 @@ elif XCoordinate == 0 and YCoordinate == -1:
 elif XCoordinate == -1 and YCoordinate == 0:
 	print("The angle measure is 180 degrees or π radians")
 
-if XCoordinate == 0.5 and YCoordinate == 0.866:
+if XCoordinate == 0.5 and YCoordinate == (math.sqrt(3)/2):
 	print("The angle measure is 60 degrees or π/3 radians")
-elif XCoordinate == -0.5 and YCoordinate == 0.866:
+elif XCoordinate == -0.5 and YCoordinate == math.sqrt(3)/2:
 	print("The angle measure is 120 degrees or 2π/3 radians")
-elif XCoordinate == -0.5 and YCoordinate == -0.866:
+elif XCoordinate == -0.5 and YCoordinate == (-math.sqrt(3)/2):
 	print("The angle measure is 240 degrees or 4π/3 radians")
-elif XCoordinate == 0.5 and YCoordinate == -0.886:
+elif XCoordinate == 0.5 and YCoordinate == (-math.sqrt(3)/2):
 	print("The angle measure is 300 degrees or 5π/3 radians")
 
-if XCoordinate == 0.866 and YCoordinate == 0.5:
+if XCoordinate == (math.sqrt(3)/2) and YCoordinate == 0.5:
 	print("The angle measure is 30 degrees or π/6 radians")
-elif XCoordinate == -0.866 and YCoordinate == 0.5:
+elif XCoordinate == (-math.sqrt(3)/2) and YCoordinate == 0.5:
 	print("The angle measure is 150 degrees or 5π/6 radians")
-elif XCoordinate == -0.866 and YCoordinate == -0.5:
+elif XCoordinate == (-math.sqrt(3)/2) and YCoordinate == -0.5:
 	print("The angle measure is 210 degrees or 7π/6 radians")
-elif XCoordinate == 0.866 and YCoordinate == -0.5:
-	print("The angle measure is 330 degrees or 11π/6")
+elif XCoordinate == (math.sqrt(3)/2) and YCoordinate == -0.5:
+	print("The angle measure is 330 degrees or 11π/6 radians")
 
-if XCoordinate == 0.707 and YCoordinate == 0.707:
+if XCoordinate == math.sqrt(2)/2 and YCoordinate == math.sqrt(2)/2:
 	print("The angle measure is 45 degrees or π/4 radians")
-elif XCoordinate == -0.707 and YCoordinate == 0.707:
+elif XCoordinate == -math.sqrt(2)/2 and YCoordinate == math.sqrt(2)/2:
 	print("The angle measure is 135 degrees or 3π/4 radians")
-elif XCoordinate == -0.707 and YCoordinate == -0.707:
+elif XCoordinate == -math.sqrt(2)/2 and YCoordinate == -math.sqrt(2)/2:
 	print("The angle measure is 225 degrees or 5π/4 radians")
-elif XCoordinate == 0.707 and YCoordinate == -0.707:
+elif XCoordinate == math.sqrt(2)/2 and YCoordinate == -math.sqrt(2)/2:
 	print("The angle measure is 315 degrees or 7π/4 radians")
