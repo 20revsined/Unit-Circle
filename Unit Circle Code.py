@@ -55,19 +55,19 @@ elif Input == "radians":
 		ModifyRadian = float(input("Please enter a value that will modify your input."))
 		ModifyRadian *= math.pi
 
-	while ModifyRadian < 0 and ModifyRadian <= 2 * math.pi:
+	while ModifyRadian < 0 and ModifyRadian <= (2 * math.pi):
 		ModifyRadian += (2 * math.pi)
 
-	while ModifyRadian > 2 * math.pi and ModifyRadian <= 0:
+	while ModifyRadian > (2 * math.pi) and ModifyRadian <= 0:
 		ModifyRadian -= (2 * math.pi)
 
-	if(ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
+	if(ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % (math.pi/3) != 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
 		print("The coordinates of this measurementment are (" + str(math.sqrt(3) / 2) + "," + str(0.5) + ")")
-	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > (math.pi / 2) and ModifyRadian < (math.pi)):
+	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % (math.pi/3) != 0) and (ModifyRadian > (math.pi / 2) and ModifyRadian < (math.pi)):
 		print("The coordinates of this measurement are (" + str(-math.sqrt(3) / 2) + "," + str(0.5) + ")")
-	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > (math.pi) and ModifyRadian < (math.pi * 1.5)):
+	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % (math.pi/3) != 0) and (ModifyRadian > (math.pi) and ModifyRadian < (math.pi * 1.5)):
 		print("The coordinates of this measurement are (" + str(-math.sqrt(3) / 2) + "," + str(-0.5) + ")")
-	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % 1.046 != 0) and (ModifyRadian > (math.pi * 1.5) and ModifyRadian < (math.pi * 2)):
+	elif (ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % (math.pi/3) != 0) and (ModifyRadian > (math.pi * 1.5) and ModifyRadian < (math.pi * 2)):
 		print("The coordinates of this measurement are (" + str(math.sqrt(3) / 2) + "," + str(-0.5) + ")")
 
 	if (ModifyRadian % (math.pi / 3) == 0) and (ModifyRadian % 2 == 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
