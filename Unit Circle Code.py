@@ -117,38 +117,44 @@ if YCoordinate == "sqrt2":
 	ModifyY = float(input("Please enter a value in which sqrt2 will be multiplied."))
 	YCoordinate *= ModifyY
 
-if XCoordinate == 1 and YCoordinate == 0:
+print("XCoordinate: " + str(XCoordinate))
+print("YCoordinate: " + str(YCoordinate))
+
+X = XCoordinate
+Y = YCoordinate
+
+if X == 1 and Y == 0:
 	print("The angle measures are 0 or 360 degrees and 0 or 2π radians")
-elif XCoordinate == 0 and YCoordinate == 1:
+elif X == 0 and Y == 1:
 	print("The angle measure is 90 degrees or π/2 radians")
-elif XCoordinate == 0 and YCoordinate == -1:
+elif X == 0 and Y == -1:
 	print("The angle measure is 270 degrees are 3π/2 radians")
-elif XCoordinate == -1 and YCoordinate == 0:
+elif X == -1 and Y == 0:
 	print("The angle measure is 180 degrees or π radians")
 
-if XCoordinate == 0.5 and YCoordinate == (math.sqrt(3)/2):
+if X == 0.5 and Y == (math.sqrt(3) * 0.5):
 	print("The angle measure is 60 degrees or π/3 radians")
-elif XCoordinate == -0.5 and YCoordinate == math.sqrt(3)/2:
+elif X == -0.5 and Y == math.sqrt(3) * 0.5:
 	print("The angle measure is 120 degrees or 2π/3 radians")
-elif XCoordinate == -0.5 and YCoordinate == (-math.sqrt(3)/2):
+elif X == -0.5 and Y == (-math.sqrt(3) * 0.5):
 	print("The angle measure is 240 degrees or 4π/3 radians")
-elif XCoordinate == 0.5 and YCoordinate == (-math.sqrt(3)/2):
+elif X == 0.5 and Y == (-math.sqrt(3) * 0.5):
 	print("The angle measure is 300 degrees or 5π/3 radians")
 
-if XCoordinate == (math.sqrt(3)/2) and YCoordinate == 0.5:
+if X == (math.sqrt(3) * 0.5) and Y == 0.5:
 	print("The angle measure is 30 degrees or π/6 radians")
-elif XCoordinate == (-math.sqrt(3)/2) and YCoordinate == 0.5:
+elif X == (-math.sqrt(3) * 0.5) and Y == 0.5:
 	print("The angle measure is 150 degrees or 5π/6 radians")
-elif XCoordinate == (-math.sqrt(3)/2) and YCoordinate == -0.5:
+elif X == (-math.sqrt(3) * 0.5) and Y == -0.5:
 	print("The angle measure is 210 degrees or 7π/6 radians")
-elif XCoordinate == (math.sqrt(3)/2) and YCoordinate == -0.5:
+elif X == (math.sqrt(3) * 0.5) and Y == -0.5:
 	print("The angle measure is 330 degrees or 11π/6 radians")
 
-if XCoordinate == math.sqrt(2)/2 and YCoordinate == math.sqrt(2)/2:
+if X == math.sqrt(2) * 0.5 and Y == math.sqrt(2) * 0.5:
 	print("The angle measure is 45 degrees or π/4 radians")
-elif XCoordinate == -math.sqrt(2)/2 and YCoordinate == math.sqrt(2)/2:
+elif X == -math.sqrt(2) * 0.5 and Y == math.sqrt(2) * 0.5:
 	print("The angle measure is 135 degrees or 3π/4 radians")
-elif XCoordinate == -math.sqrt(2)/2 and YCoordinate == -math.sqrt(2)/2:
+elif X == -math.sqrt(2) * 0.5 and Y == -math.sqrt(2) * 0.5:
 	print("The angle measure is 225 degrees or 5π/4 radians")
-elif XCoordinate == math.sqrt(2)/2 and YCoordinate == -math.sqrt(2)/2:
+elif X == math.sqrt(2) * 0.5 and Y == -math.sqrt(2) * 0.5:
 	print("The angle measure is 315 degrees or 7π/4 radians")
