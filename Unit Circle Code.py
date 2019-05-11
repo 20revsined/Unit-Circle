@@ -1,4 +1,5 @@
 import math
+import numpy
 
 Input = str(input("Welcome to the Unit Circle calculator! Please state whether you will be entering a degree measurement or a radian measurement on the Unit Circle."))
 
@@ -52,14 +53,15 @@ elif Input == "radians":
 
 	if(radians == "pi"):
 		radians = math.pi
+		ModifyRadian = 0
 		ModifyRadian = float(input("Please enter a value that will modify your input."))
 		ModifyRadian *= math.pi
 
-	while ModifyRadian < 0 and ModifyRadian <= (2 * math.pi):
-		ModifyRadian += (2 * math.pi)
+		while ModifyRadian < 0 and ModifyRadian <= (2 * math.pi):
+			ModifyRadian += (2 * math.pi)
 
-	while ModifyRadian > (2 * math.pi) and ModifyRadian <= 0:
-		ModifyRadian -= (2 * math.pi)
+		while ModifyRadian > (2 * math.pi) and ModifyRadian <= 0:
+			ModifyRadian -= (2 * math.pi)
 
 	if(ModifyRadian % (math.pi / 6) == 0) and (ModifyRadian % (math.pi/3) != 0) and (ModifyRadian > 0 and ModifyRadian < (math.pi / 2)):
 		print("The coordinates of this measurementment are (" + str(math.sqrt(3) / 2) + "," + str(0.5) + ")")
@@ -123,7 +125,7 @@ print("YCoordinate: " + str(YCoordinate))
 X = XCoordinate
 Y = YCoordinate
 
-if X == 1 and Y == 0:
+if numpy.isclose(X - Y, 1.0001):
 	print("The angle measures are 0 or 360 degrees and 0 or 2π radians")
 elif X == 0 and Y == 1:
 	print("The angle measure is 90 degrees or π/2 radians")
@@ -136,9 +138,9 @@ if X == 0.5 and Y == (math.sqrt(3) * 0.5):
 	print("The angle measure is 60 degrees or π/3 radians")
 elif X == -0.5 and Y == math.sqrt(3) * 0.5:
 	print("The angle measure is 120 degrees or 2π/3 radians")
-elif X == -0.5 and Y == (-math.sqrt(3) * 0.5):
+elif X == -0.5 and Y == -(math.sqrt(3) * 0.5):
 	print("The angle measure is 240 degrees or 4π/3 radians")
-elif X == 0.5 and Y == (-math.sqrt(3) * 0.5):
+elif X == 0.5 and Y == -(math.sqrt(3) * 0.5):
 	print("The angle measure is 300 degrees or 5π/3 radians")
 
 if X == (math.sqrt(3) * 0.5) and Y == 0.5:
@@ -158,3 +160,5 @@ elif X == -math.sqrt(2) * 0.5 and Y == -math.sqrt(2) * 0.5:
 	print("The angle measure is 225 degrees or 5π/4 radians")
 elif X == math.sqrt(2) * 0.5 and Y == -math.sqrt(2) * 0.5:
 	print("The angle measure is 315 degrees or 7π/4 radians")
+
+	#sources: https://docs.scipy.org/doc/numpy/reference/generated/numpy.isclose.html , https://stackoverflow.com/questions/5595425/what-is-the-best-way-to-compare-floats-for-almost-equality-in-python
